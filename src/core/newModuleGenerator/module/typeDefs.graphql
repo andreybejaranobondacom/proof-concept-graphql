@@ -1,0 +1,9 @@
+type Example {
+  id: ID,
+  name: String,
+  age: Int
+}
+
+type Query {
+  examples:[Example]
+}

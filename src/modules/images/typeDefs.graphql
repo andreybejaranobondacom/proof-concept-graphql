@@ -1,0 +1,9 @@
+type Image {
+  id: ID,
+  size: String,
+  image: String
+}
+
+type Query {
+  images:[Image]
+}
