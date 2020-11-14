@@ -8,12 +8,12 @@ const app = require('express')();
 // Configuration of enviroment
 const config = require('./config');
 
-// Routes of GraphQL and GraphiQL
-const routes = require('./core/routes');
+// Instance of GraphQL
+const graphql = require('./core/graphql');
 
-app.use(routes);
+graphql.applyMiddleware({ app });
 
 // Start server
 app.listen(config.port, () => {
-  console.log(`Go to http://localhost:${config.port}/graphiql to run queries! "enviroment": ${config.env}`);
+  console.log(`Go to http://localhost:${config.port}${graphql.graphqlPath} to run queries! "enviroment": ${config.env}`);
 });
